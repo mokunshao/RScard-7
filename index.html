@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>RScard</title>
+    <link rel="stylesheet" href="https://lib.baomitu.com/Swiper/4.4.1/css/swiper.min.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <!-- <div id="loadingContainer" class="active">
+        <div id="loading"></div>
+    </div> -->
+    <div id="navBar" class="navBar clearfix">        
+        <a href="#" class="logo">
+            <span class="rs">RS</span><span class="card">card</span>
+        </a>        
+        <nav>
+            <ul class="clearfix">
+                <li><a href="#about">关于</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li>
+                    <a href="#works">作品</a>
+                    <ul class="submenu">
+                        <li>作品1</li>
+                        <li>作品2</li>
+                        <li>作品3</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">博客</a>
+                    <ul class="submenu">
+                        <li>博客1</li>
+                        <li>博客2</li>
+                        <li>博客3</li>
+                    </ul>
+                </li>
+                <li><a href="#">日历</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">其他</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="banner"></div>
+
+    <main>
+        <div data-x class="about" id="about">
+            <div class="pictureAndText clearfix" >
+                <div class="picture">
+                    <img src="https://wx3.sinaimg.cn/large/0060lm7Tly1fwghurlmi4j308b09njrr.jpg" alt="avatar">
+                </div>
+                <div class="text">
+                    <span class="hello">Hello
+                        <span class="triangle"></span>
+                    </span>
+                    <h1>莫锟绍</h1>
+                    <p>前端开发工程师</p>
+                    <hr>
+                    <dl class="clearfix">
+                        <dt>年龄</dt>
+                        <dd>18</dd>
+                        <dt>所在城市</dt>
+                        <dd>广州</dd>
+                        <dt>邮箱</dt>
+                        <dd>abc@abc.com</dd>
+                        <dt>手机</dt>
+                        <dd>13812345678</dd>
+                    </dl>
+                </div>
+            </div>
+            <footer class="media">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>  
+            </footer>
+        </div>
+        <p class="buttonWrapper">
+            <a class="button" href="resume.pdf" target="_blank" download >下载 PDF 简历</a>          
+        </p>
+        <div class="aboutMe">
+            <p>莫锟绍，前端工程师，热爱 Web 开发。</p>
+            <p>技能：前端开发，Rails 开发，Node.js 开发</p>
+        </div>
+    </main>
+
+    <section data-x class="skills" id="skills">
+      <h2>技能</h2>
+      <ol class="clearfix">
+        <li>
+            <h3>HTML 5 &amp; CSS 3</h3>
+            <div class="progressBar"><div class="progress" style="width: 50%"></div></div>
+        </li>
+        <li>
+            <h3>JavaScript</h3>
+            <div class="progressBar"><div class="progress" style="width: 70%"></div></div>
+        </li> 
+        <li>
+            <h3>jQuery</h3>
+            <div class="progressBar"><div class="progress" style="width: 60%"></div></div>
+        </li> 
+        <li>
+            <h3>Vue</h3>
+            <div class="progressBar"><div class="progress" style="width: 80%"></div></div>
+        </li> 
+        <li>
+            <h3>React</h3>
+            <div class="progressBar"><div class="progress" style="width: 30%"></div></div>
+        </li> 
+        <li>
+            <h3>HTTP</h3>
+            <div class="progressBar"><div class="progress" style="width: 40%"></div></div>
+        </li>
+      </ol>
+    </section>
+
+    <section data-x class="works" id="works">
+        <h2>作品集</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://wx1.sinaimg.cn/large/0060lm7Tly1fwgz19vt0vj30w00i0myk.jpg" alt="zenstart" width="800" height="450"></div>
+                <div class="swiper-slide"><img src="https://wx2.sinaimg.cn/large/0060lm7Tly1fwgz18n4whj30w00i0752.jpg" alt="apple-slider" width="800" height="450"></div>
+                <div class="swiper-slide"><img src="https://wx4.sinaimg.cn/large/0060lm7Tly1fwgz19djz8j30w00i0ac1.jpg" alt="whiteboard" width="800" height="450"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </section>
+
+    <section class="comments">
+        <h2>留言板</h2>
+        <ol id="messagesList"></ol>
+        <form id="comments">
+            <div>
+                <label>姓名</label>
+                <input type="text" name="name">      
+            </div>
+            <div>
+                <textarea style="resize:none" ></textarea>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>       
+    </section>
+
+    <script src="https://at.alicdn.com/t/font_882692_1iocoezbn3th.js"></script>
+    <script src="https://lib.baomitu.com/tween.js/17.2.0/Tween.min.js"></script>
+    <script src="https://lib.baomitu.com/Swiper/4.4.1/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-realtime@4.2.0/dist/realtime.browser.min.js"></script>
+    <!-- <script src="js/loading.js"></script> -->
+    <script src="js/sticky-navbar.js"></script>
+    <script src="js/slideUp.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/init-swiper.js"></script>
+    <script src="js/comments.js"></script>
+</body>
+</html>

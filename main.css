@@ -1,0 +1,476 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: #efefef;
+	margin:0;
+	padding: 0;
+	color:black;
+}
+
+ul, ol{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+.clearfix::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+svg.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
+div#loadingContainer {
+	height:100%;
+	width:100%;
+	display: none;
+	position: fixed;
+	background: white;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+}
+
+div#loadingContainer.active {
+	display: flex;
+}
+
+div#loadingContainer > div#loading::before,
+div#loadingContainer > div#loading::after {
+	content:'';
+	position:absolute;
+	width:10px;
+	height:10px;
+	background:black;
+	border-radius:50%;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	animation:loading 1.5s linear infinite;
+}
+
+div#loadingContainer > div#loading::after {
+	animation-delay:0.7s;
+}
+
+@keyframes loading {
+  0%{
+    width:0;
+    height:0;
+    opacity:1;
+  }
+  100%{
+    width:100px;
+    height:100px;
+    opacity:0;
+  }
+}
+
+div.navBar {
+	padding: 20px 16px;
+	position: fixed;
+	width: 100%;
+	box-sizing: border-box;
+	transition: all 1s;
+	z-index: 1;
+	color: #b7b7b7;
+}
+
+div.navBar.sticky {
+	background: white;
+	padding: 10px 16px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	color: #3d4451;
+}
+
+div.navBar > a.logo {
+	font-size: 24px;
+    font-family: 'Arial Black';
+    float:left;
+}
+
+div.navBar > a.logo > span.rs {
+	color: #e6686a;
+}
+
+div.navBar > a.logo > span.card {
+	color: #9a9da2;
+}
+
+div.navBar > nav {
+	float:right;
+}
+
+div.navBar > nav > ul {
+	display: block;
+}
+
+div.navBar > nav > ul > li {
+	float:left;
+	margin-left: 17px;
+	margin-right: 17px;
+	position: relative;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+}
+
+div.navBar > nav > ul > li > a {
+	font-size: 12px;
+	font-weight: bold;
+	color: inherit;
+	display: block;
+	position: relative;
+}
+
+div.navBar > nav > ul > li.active > a::after,
+div.navBar > nav > ul > li.highLight > a::after{
+	content: ''; 
+	display: block;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	height: 3px;
+	background: #e6686a;
+	animation: underline 0.3s;
+}
+
+@keyframes underline{
+	0%{
+		width:0%;
+	}
+	100%{
+		width:100%;
+	}
+}
+
+div.navBar > nav > ul > li > ul.submenu{
+	display: none;
+	position: absolute;
+	top:110%; 
+	right: 0;
+	white-space: nowrap;
+	color: #3d4451;
+	background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+	animation: submenuSlide 0.3s;
+}
+
+@keyframes submenuSlide{
+	0%{
+		margin-right: 100%
+	}
+	100%{
+		margin-right: 0;
+	}
+}
+
+div.navBar > nav > ul > li.active > ul.submenu{
+	display: block;
+}
+
+div.navBar > nav > ul > li > ul.submenu > li {
+	padding: 5px 10px;
+}
+
+[data-x].moveDown{
+	transform: translateY(60px);
+}
+
+[data-x]{
+	transform: translateY(0);
+	transition: all 0.3s;
+}
+
+div.banner{
+	background-image: url(https://wx1.sinaimg.cn/large/0060lm7Tly1fwghurmtt8j31kw0nlad3.jpg);
+	height: 515px;
+	background-size: cover;
+	background-position: center center;
+}
+
+div.banner::after{
+	content: "";
+	display: block;
+	height: 515px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+main > div.about{
+	max-width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -340px;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+}
+
+main > div.about > div.pictureAndText{
+	padding: 50px;
+	background-color: white;
+}
+
+main > div.about > div.pictureAndText > div.picture{
+	float: left;
+}
+
+main > div.about > div.pictureAndText > div.text{
+	float: left;
+	display: block;
+	margin-left: 65px; 
+	width: 470px;
+	height: 347px;
+}
+
+main > div.about > div.pictureAndText > div.text > span.hello{
+	background: #e6686a;
+  	color: white;
+  	padding: 4px 16px;
+  	display: inline-block;
+  	position: relative;
+  	margin-bottom: 10px;
+}
+
+main > div.about > div.pictureAndText > div.text > span.hello > div.triangle{
+	border:10px solid transparent;
+	display: block;
+	border-top-width:0px; 
+	border-left-color: #e6686a;
+	width: 0px;
+	position: absolute;
+	left: 4px;
+	top: 100%;
+}
+
+main > div.about > div.pictureAndText > div.text > h1{
+	margin-top: 18px;
+}
+
+main > div.about > div.pictureAndText > div.text > hr{
+	margin: 20px 0;
+	border: none;
+	border-top: #DEDEDE 1px solid;
+}
+
+main > div.about > div.pictureAndText > div.text > dl{
+	width:100%;
+}
+
+main > div.about > div.pictureAndText > div.text > dl > dd,
+main > div.about > div.pictureAndText > div.text > dl > dt {
+	float: left;
+	padding: 5px 0;
+	margin-left: 0px;
+}
+
+main > div.about > div.pictureAndText > div.text > dl > dt {
+	width:30%;
+	font-weight: bold;
+}
+
+main > div.about > div.pictureAndText > div.text > dl > dd {
+	width: 70%;
+	color: #9da0a7;
+}
+
+main > div.about > footer.media {
+	background:rgb(230, 104, 106); 
+	text-align: center;
+}
+
+main > div.about > footer.media > a > svg.icon {
+	width: 30px;
+    height: 30px;
+    fill: white;
+    vertical-align: middle;
+}
+
+main > div.about > footer.media > a {
+	display: inline-block;
+	border-radius: 100%;
+	width: 40px;
+	padding: 5px 0;
+	margin: 16px;
+}
+
+main > div.about > footer.media > a:hover {
+    background-color: #CF5D5F;
+}
+
+main > p.buttonWrapper > a.button{
+	padding: 21px 55px;
+	border: 1px #cdcfd1 solid;
+	margin: 32px 0;
+	font-size: 14px;
+	font-weight: bold;
+    color: #3d4451;
+    display: inline-block;
+    border-radius: 4px;
+    transition: box-shadow 0.2s;
+}
+
+main > p.buttonWrapper > a.button:hover{
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.6);
+}
+
+main > p.buttonWrapper{
+	text-align: center;
+}
+
+main > div.aboutMe{
+	text-align: center;
+	font-family: KaiTi;
+	line-height: 1.8;
+	font-size: 18px;
+}
+
+section.skills,
+section.works,
+section.comments{
+	max-width: 940px;
+	margin: 60px auto;
+	text-align: center;
+}
+
+section.skills > h2,
+section.works > h2,
+section.comments > h2{
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+section.skills > ol{
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+	background: white;
+	margin-top: 30px;
+	padding: 42px 50px 10px;
+}
+
+section.skills > ol > li{
+	float: left;
+	width: 48%;
+}
+
+section.skills > ol > li:nth-child(even){
+	float: right;
+}
+
+section.skills > ol > li > h3 {
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+    font-weight: normal;
+}
+
+section.skills > ol > li > div.progressBar{
+	background-color: #FAE1E1;
+	height: 3px;
+	border-radius: 3px;
+	margin:4px 0 40px;
+	overflow: hidden;
+}
+
+section.skills > ol > li > div.progressBar > div.progress{
+	height: 100%;
+	background-color: #E6686A;
+	border-radius: 3px;
+	transform: translateX(0);
+	transition: all 1s;
+}
+
+section.skills.moveDown > ol > li > div.progressBar > div.progress{
+	transform: translateX(-100%);
+}
+
+section.works{
+	position: relative;
+}
+
+section.works > div.swiper-container {
+    width: 800px;
+	height: 450px;
+	margin-top: 30px;
+}
+
+section.works > div.swiper-button-prev,
+section.works > div.swiper-button-next{
+	background-color: white;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	outline: none;
+}
+
+section.works > div.swiper-button-prev{
+	right: 100%;
+	left: auto;	
+}
+
+section.works > div.swiper-button-next{
+	left: 100%;
+	right: auto;	
+}
+
+section.comments > form{
+	margin-top: 30px;
+}
+
+section.comments > form > div:first-child{
+    width: 300px;
+    margin: 5px auto;
+    box-sizing: border-box;
+}
+
+section.comments > form > div:first-child > label{
+	width: 14%;
+}
+
+section.comments > form > div:first-child > input{
+	width: 86%;
+}
+
+section.comments > form > div > textarea{
+	height: 100px;
+	width: 300px;
+}
+
+section.comments > form > div:last-child > input{
+	width: 300px;
+}
+
+section.comments > ol{
+	/* background-color: #cdcfd1; */
+	/* border: #3d4451 1px solid; */
+	/* border-radius: 6px; */
+	margin-top: 30px;
+}
+
+section.comments > ol > li:first-child{
+	border-top:#DEDEDE 1px solid;
+}
+
+section.comments > ol > li{
+	background-color: white;
+	max-width: 400px;
+	margin: 0 auto;
+	border-bottom:#DEDEDE 1px solid;
+	padding: 10px;
+	text-align: left;
+}
