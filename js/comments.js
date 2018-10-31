@@ -41,10 +41,10 @@
         loadMessages: function(){
             this.model.fetch().then(
                 function(messages){
-                    let array = messages.map((items) => {return items.attributes});
-                    array.forEach(element => {
+                    let array = messages.map((item) => {return item.attributes});
+                    array.forEach(item => {
                         let li = document.createElement('li');
-                        li.innerText = `${element.name}：${element.content}`;
+                        li.innerText = `${item.name}：${item.content}`;
                         messagesList.append(li);
                     });
                 }
